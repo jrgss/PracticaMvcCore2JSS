@@ -1,0 +1,9 @@
+﻿@model Libro
+    
+  <img src="~/images/@Model.Portada" style="width:150px;height:250px"/>
+  <h4>@Model.Titulo</h4>
+  <h5>@Model.Autor - @Model.Editorial</h5>
+  <p>@Model.Resumen</p>
+
+
+<a class="btn btn-dark" asp-controller="Libros" asp-action="AddLibroCarrito" asp-route-idlibro="@Model.IdLibro">Comprar</a>

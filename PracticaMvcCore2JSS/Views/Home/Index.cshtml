@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+ @section Scripts {
+     <script>
+            $(document).ready(function() {
+           //alert("HOLA");
+            $("#libros").load("/Home/_MostrarLibros");
+             $("#librospaginados").load("/Home/_LibrosPaginados");
+        })
+
+       
+        function MostrarLibrosGeneros(idgenero){
+             //alert("HOLA");
+            $("#libros").html("");
+              $("#libros").load("/Home/_MostrarLibrosGenero?idgenero="+idgenero);
+        }
+        function Paginar(posicion,total){
+          
+            if (posicion < 0 || posicion > total) {
+              
+            } else {
+                  $("#librospaginados").load("/Home/_LibrosPaginados?pos="+posicion)
+            }
+          
+        }
+             </script>
+ }
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div id="libros">
+
+</div>
+
+<br />
+<br />
+<div id="librospaginados">
+
+</div>
+

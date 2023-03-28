@@ -1,0 +1,11 @@
+﻿
+
+@if (Context.User.Identity.IsAuthenticated){
+<li class="nav-item">
+
+
+        <a asp-controller="Managed" asp-action="LogOut">Cerrar sesión <span style="color:fuchsia">
+                @Context.User.Identity.Name
+            </span></a>
+                         </li>
+}    

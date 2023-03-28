@@ -1,0 +1,35 @@
+﻿@model List<Libro>
+
+    @{
+    int numregistros = 1;
+    int numeropagina = 1;
+    if (ViewData["REGISTROS"] != null)
+    {
+        numregistros = (int)ViewData["REGISTROS"];
+        numeropagina = (int)ViewData["POSICION"];
+    }
+}
+        <ul class="list-group list-group-horizontal">
+           
+             <li>
+                  <button class="list-group-item" onclick='Paginar(@numeropagina-5,@numregistros)'> < </button>           
+            </li>
+             <li>
+                  <button class="list-group-item" onclick='Paginar(@numeropagina+5,@numregistros)'> ></button>           
+            </li>
+            
+
+         </ul>
+    @foreach(Libro lib in Model)
+    {
+  
+            <div class="card" style="background-color:lightgrey; display: inline-block;">
+                <a asp-controller="Libros" asp-action="Detalles" asp-route-idlibro="@lib.IdLibro">
+                <img src="~/images/@lib.Portada" style="width:150px;height:250px"/>
+                <br>
+                <span>@lib.Titulo</span>
+                </a>
+            </div>
+
+        
+    }

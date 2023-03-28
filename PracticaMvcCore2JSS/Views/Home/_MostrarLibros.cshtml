@@ -1,0 +1,16 @@
+﻿@model List<Libro>
+
+
+    @foreach(Libro lib in Model)
+    {
+  
+            <div class="card" style="background-color:lightgrey; display: inline-block;margin-right:1%">
+                <a asp-controller="Libros" asp-action="Detalles" asp-route-idlibro="@lib.IdLibro">
+                <img src="~/images/@lib.Portada" style="width:150px;height:250px"/>
+                <br>
+                <span>@lib.Titulo</span>
+                </a>
+            </div>
+
+        
+    }

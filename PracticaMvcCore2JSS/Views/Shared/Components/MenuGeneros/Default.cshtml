@@ -1,0 +1,18 @@
+﻿@model List<Genero>
+
+    
+    <div class="dropdown">
+ <span class="btn dropdown-toggle nav-link text-dark" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" type="button">
+    Generos
+  </span>
+    <ul  class="dropdown-menu  aria-labelledby="dropdownMenuButton1">
+    @foreach(Genero gen in Model)
+    {
+           <li class="list-group-item">
+              <span class="dropdown-item" onclick="MostrarLibrosGeneros(@gen.IdGenero)">@gen.nombre</span>
+         </li> 
+    }
+  
+
+    </ul>
+      </div>

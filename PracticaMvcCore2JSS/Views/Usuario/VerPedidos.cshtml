@@ -1,0 +1,8 @@
+﻿@model List<VistaPedidos>
+
+    <ul>
+    @foreach(VistaPedidos vista in Model)
+    {
+        <li>@vista.Nombre ha comprado @vista.Titulo por @vista.PrecioFinal</li>
+    }
+</ul>
